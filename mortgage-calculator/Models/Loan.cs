@@ -28,8 +28,8 @@ namespace loan_calculator.Models
             newloan.AnnualInterestPercentage = ValidationMethods.GetValidDouble("Enter your Annual Interest Rate Percentage requested: "
                                                 , CONSTANTS.ANNUAL_INTEREST_PERCENTAGE_MIN
                                                 , CONSTANTS.ANNUAL_INTEREST_PERCENTAGE_MAX);
-            newloan.NumberOfPaymentPerYear = ValidationMethods.GetValidInt($"Enter the Number of Payments Per Year between " +
-                                                 $"  {CONSTANTS.NUMBER_OF_PAYMENT_PER_YEAR_MIN} and {CONSTANTS.NUMBER_OF_PAYMENT_PER_YEAR_MAX}: "
+            newloan.NumberOfPaymentPerYear = ValidationMethods.GetValidInt($"Enter the Number of Payments Per Year between" +
+                                                 $" {CONSTANTS.NUMBER_OF_PAYMENT_PER_YEAR_MIN} and {CONSTANTS.NUMBER_OF_PAYMENT_PER_YEAR_MAX}: "
                                                 , CONSTANTS.NUMBER_OF_PAYMENT_PER_YEAR_MIN
                                                 , CONSTANTS.NUMBER_OF_PAYMENT_PER_YEAR_MAX);
             return newloan;
@@ -58,7 +58,7 @@ namespace loan_calculator.Models
         public override string ToString()
         {
             return  $"Principle: { Math.Round(Principle, 2) } | Annual Interest: { AnnualInterestPercentage }% | Term: { TermsInYear } Years | #Payments Per Year: { NumberOfPaymentPerYear }".PadRight(94, ' ') + "*\n" +
-                    $"*    Base Payment: { Math.Round( GetTermPayment(), 2) }".PadRight(99, ' ') ;
+                    $"*    Base Payment: { Math.Round( GetTermPayment(), 2) }".PadRight(99, ' ');
         }
 
     }

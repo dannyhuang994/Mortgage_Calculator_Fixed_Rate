@@ -46,6 +46,12 @@ namespace loan_calculator.Models
             return newHomePurchase;
         }
 
+        public void UpdateDownPayment(double newDownPayment)
+        {
+            DownPayment = newDownPayment;
+            CurrentLoan.Principle = GetTotalLoanAmountRequired(); // adjusting the principle in total amount borrowed
+        }
+
         public double GetTotalLoanAmountRequired()
         {
             // Total Loan Value = purhcase price - downpayment + origination fee(1% of initial loan)  + 2500 tax (CLOSING_FEE_AND_TAXES)
@@ -120,7 +126,28 @@ namespace loan_calculator.Models
 
         public bool DecisionToApprove(double yearlyIncome)
         {
-            return yearlyIncome / this.CurrentLoan.NumberOfPaymentPerYear * CONSTANTS.DECISION_THRESHOLD_PERCENTAGE > this.GetMonthlyPayment();
+            bool decisionToApprove = CONSTANTS.DECISION_THRESHOLD_PERCENTAGE * yearlyIncome / CurrentLoan.NumberOfPaymentPerYear  > GetMonthlyPayment();
+
+            if (decisionToApprove)
+            {
+
+                Console.WriteLine("\nCongratulation!!! Loan is Approved!\n");
+                Console.WriteLine(new string('*', 100));
+                Console.WriteLine(this);
+            }
+            else
+            {
+                Console.WriteLine("\nSorry, Your loan is Denied.");
+                Console.WriteLine("Please place more money down and look at buying a more affordable home.\n");
+                Console.WriteLine(new string('*', 100));
+                Console.WriteLine(this);
+
+            }
+
+            Console.WriteLine(new string('*', 100));
+            Console.WriteLine();
+
+            return decisionToApprove;
         }
 
         /// <summary>

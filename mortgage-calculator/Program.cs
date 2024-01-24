@@ -16,23 +16,17 @@ class Program
         // Create a Home Purchase 
         HomePurchase newHomePurchase = HomePurchase.CreateHomePurchase();
 
-        if ( newHomePurchase.DecisionToApprove(yearlyIncome) )
+        bool toApprove = newHomePurchase.DecisionToApprove(yearlyIncome);
+        while (!toApprove)
         {
-             
-            Console.WriteLine("\nCongratulation!!! Loan is Approved!\n");
-            Console.WriteLine(new string('*', 100));
-            Console.WriteLine(newHomePurchase);
-        }
-        else
-        {
-            Console.WriteLine("\nSorry, Your loan is Denied.");
-            Console.WriteLine("Please place more money down and look at buying a more affordable home.\n");
-            Console.WriteLine(new string('*', 100));
-            Console.WriteLine(newHomePurchase);
-             
-        }
+            // ask user to increase down payment or provide more income
+            double newDownPayment = ValidationMethods.GetValidDouble($"Please Enter a Higher Down Payment Amount, {newHomePurchase.DownPayment} is too low: ");
+            yearlyIncome = ValidationMethods.GetValidDouble("Update Applicant's Yearly Income: ");
 
-        Console.WriteLine(new string('*', 100));
+            newHomePurchase.UpdateDownPayment(newDownPayment);
+            toApprove = newHomePurchase.DecisionToApprove(yearlyIncome);
+        }
+        
     }
 
 }
