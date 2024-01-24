@@ -9,7 +9,7 @@ namespace loan_calculator.Models
     public class CONSTANTS
     {
 
-        public const bool DEBUG = true;
+        public const bool DEBUG = false;
 
 
         // for HomePurchae 
@@ -31,17 +31,19 @@ namespace loan_calculator.Models
 
         public const double MIN_DOWN_PAYMENT = 0;
 
+        public const double DECISION_THRESHOLD_PERCENTAGE = 0.25;
+
 
         // for Loan class
 
-  
+
         public const int YEAR_MIN_TERM = 5;
 
         public const int YEAR_MAX_TERM = 30;
 
-        public const double ANNUAL_INTEREST_MIN = 0.01;
+        public const double ANNUAL_INTEREST_PERCENTAGE_MIN = 1;
 
-        public const double ANNUAL_INTEREST_MAX = 0.20;
+        public const double ANNUAL_INTEREST_PERCENTAGE_MAX = 50.0;
 
         public const int NUMBER_OF_PAYMENT_PER_YEAR_MIN = 1;
 
