@@ -3,7 +3,7 @@
 ### Description
 This is a mortgage calculator for a fixed-rate interest loan. The console will prompt user to enter their yearly income, purchase price of home, market value, total down payment, yearly HOA fee, number of years for loan repayment, APR (fixed at the time of home purchase), and number of payment per year. 
 
-There are some assumption made on the homeowner insurance percentage, orignation fee percentage, closing fee and taxes. These variables are store in <a link = "https://github.com/dannyhuang994/Mortgage_Calculator_Fixed_Rate/edit/main/mortgage-calculator/Models/CONSTANTS.cs">/Models/CONSTANTS.cs</a>
+There are some assumption made on the homeowner insurance percentage, orignation fee percentage, closing fee and taxes. These variables are store in [/Models/CONSTANTS.cs](./mortgage-calculator/Models/CONSTANTS).
 Update the numbers as you need. 
 
 
