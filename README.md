@@ -1,7 +1,7 @@
 ## Mortgage Calculator (.Net Console Application with C#)
 
 ### Description
-This is a mortgage calculator for a fixed-rate interest loan. The console will prompt user to enter their yearly income, purchase price of home, market value, total down payment, yearly HOA fee, number of years for loan repayment, APR (fixed at the time of home purchase), and number of payment per year. 
+This is a mortgage calculator for a fixed-rate interest loan. The console will prompt user to enter their yearly income, purchase price of home, market value, total down payment, yearly HOA fee, number of years for loan repayment, APR (fixed at the time of home purchase), and number of payments per year. 
 
 There are some assumption made on the homeowner insurance percentage, orignation fee percentage, closing fee and taxes. These variables are store in [/Models/CONSTANTS.cs](./mortgage-calculator/Models/CONSTANTS.cs).
 Update the numbers as you need. 
