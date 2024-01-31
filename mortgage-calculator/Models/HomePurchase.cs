@@ -27,13 +27,13 @@ namespace loan_calculator.Models
             // TODO get user input for Home Purchase Detail
             HomePurchase newHomePurchase = new HomePurchase();
 
-            newHomePurchase.PurchasePrice = ValidationMethods.GetValidDouble($"Enter your home purchase price between {CONSTANTS.MIN_HOUSE_PRICE} and {CONSTANTS.MAX_HOUSE_PRICE}: "
+            newHomePurchase.PurchasePrice = ValidationMethods.GetValidDouble($"Enter your home purchase price between {CONSTANTS.MIN_HOUSE_PRICE:C0} and {CONSTANTS.MAX_HOUSE_PRICE:C0}: "
                                                                             , CONSTANTS.MIN_HOUSE_PRICE
                                                                             , CONSTANTS.MAX_HOUSE_PRICE);
-            newHomePurchase.MarketValue = ValidationMethods.GetValidDouble($"Enter current market value between {CONSTANTS.MIN_HOUSE_PRICE} and {CONSTANTS.MAX_HOUSE_PRICE}: "
+            newHomePurchase.MarketValue = ValidationMethods.GetValidDouble($"Enter current market value between {CONSTANTS.MIN_HOUSE_PRICE:C0} and {CONSTANTS.MAX_HOUSE_PRICE:C0}: "
                                                                             , CONSTANTS.MIN_HOUSE_PRICE
                                                                             , CONSTANTS.MAX_HOUSE_PRICE);
-            newHomePurchase.DownPayment = ValidationMethods.GetValidDouble($"Enter your total down payment: between {CONSTANTS.MIN_DOWN_PAYMENT} and {newHomePurchase.PurchasePrice}: "
+            newHomePurchase.DownPayment = ValidationMethods.GetValidDouble($"Enter your total down payment: between {CONSTANTS.MIN_DOWN_PAYMENT:C0} and {newHomePurchase.PurchasePrice:C0}: "
                                                                             , CONSTANTS.MIN_DOWN_PAYMENT
                                                                             , newHomePurchase.PurchasePrice);
             newHomePurchase.YearlyHOA = ValidationMethods.GetValidDouble("Enter Yearly HOA Fee: ");
@@ -156,12 +156,12 @@ namespace loan_calculator.Models
         public override string ToString()
         {
             return $"*    {this.CurrentLoan.ToString()}" + "*\n" +
-                   $"*    Loan Insurance Per Payment required: {Math.Round(GetRequireLoanInsurancePerPayment(), 2)} ".PadRight(99, ' ') + "*\n" +
-                   $"*    HOA Fee Per Payment: {Math.Round(GetHOAFeePerPayment(), 2)} ".PadRight(99, ' ') + "*\n" +
-                   $"*    ESCROW Fee Per Payment: {Math.Round(GetEscrow(), 2)} ".PadRight(99, ' ') + "*\n" +
-                   $"*    Property Tax Per Payment: {Math.Round(GetPropertyTaxPerPayment(), 2)} ".PadRight(99, ' ') + "*\n" +
-                   $"*    HomeOwner Insurance Per Payment: {Math.Round(GetHomeOwnerInsurancePerPayment(), 2)} ".PadRight(99, ' ') + "*\n" +
-                   $"*    Total Monthly Payment: {Math.Round(GetMonthlyPayment(), 2)}".PadRight(99, ' ') + "*";
+                   $"*    Loan Insurance Per Payment required: {GetRequireLoanInsurancePerPayment():C2} ".PadRight(99, ' ') + "*\n" +
+                   $"*    HOA Fee Per Payment: {GetHOAFeePerPayment():C2} ".PadRight(99, ' ') + "*\n" +
+                   $"*    ESCROW Fee Per Payment: {GetEscrow():C2} ".PadRight(99, ' ') + "*\n" +
+                   $"*        Property Tax Per Payment: {GetPropertyTaxPerPayment():C2} ".PadRight(99, ' ') + "*\n" +
+                   $"*        HomeOwner Insurance Per Payment: {GetHomeOwnerInsurancePerPayment():C2} ".PadRight(99, ' ') + "*\n" +
+                   $"*    Total Monthly Payment: {GetMonthlyPayment():C2}".PadRight(99, ' ') + "*";
         }
     }
 }

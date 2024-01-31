@@ -57,8 +57,8 @@ namespace loan_calculator.Models
 
         public override string ToString()
         {
-            return $"Principal: {Math.Round(Principal, 2)} | Annual Interest: {AnnualInterestPercentage}% | Term: {TermsInYear} Years | #Payments Per Year: {NumberOfPaymentPerYear}".PadRight(94, ' ') + "*\n" +
-                    $"*    Base Payment: {Math.Round(GetTermPayment(), 2)}".PadRight(99, ' ');
+            return $"Principal: {Principal:C2} | Annual Interest: {AnnualInterestPercentage / 100:P2} | Term: {TermsInYear} Years | #Payments Per Year: {NumberOfPaymentPerYear}".PadRight(94, ' ') + "*\n" +
+                    $"*    Base Payment: {GetTermPayment():C2}".PadRight(99, ' ');
         }
 
     }

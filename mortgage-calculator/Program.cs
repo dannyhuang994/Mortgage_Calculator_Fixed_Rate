@@ -20,13 +20,13 @@ class Program
         while (!toApprove)
         {
             // ask user to increase down payment or provide more income
-            double newDownPayment = ValidationMethods.GetValidDouble($"Please Enter a Higher Down Payment Amount, {newHomePurchase.DownPayment} is too low: ");
+            double newDownPayment = ValidationMethods.GetValidDouble($"Please Enter a Higher Down Payment Amount, {newHomePurchase.DownPayment:C0} is too low: ");
             yearlyIncome = ValidationMethods.GetValidDouble("Update Applicant's Yearly Income: ");
 
             newHomePurchase.UpdateDownPayment(newDownPayment);
             toApprove = newHomePurchase.DecisionToApprove(yearlyIncome);
         }
-        
+
     }
 
 }

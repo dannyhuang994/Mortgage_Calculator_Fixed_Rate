@@ -17,13 +17,13 @@ dotnet run
 
 ### Sample Output
 ``` plaintext
-Enter Applicant's Yearly Income:
+Enter Applicant's Yearly Income: 
 100000
-Enter your home purchase price between 10000 and 100000000000:
+Enter your home purchase price between $10,000 and $100,000,000,000:
 450000
-Enter current market value between 10000 and 100000000000:
+Enter current market value between $10,000 and $100,000,000,000:
 455000
-Enter your total down payment: between 0 and 450000:
+Enter your total down payment: between $0 and $450,000:
 200000
 Enter Yearly HOA Fee:
 2000
@@ -38,32 +38,32 @@ Sorry, Your loan is Denied.
 Please place more money down and look at buying a more affordable home.
 
 ****************************************************************************************************
-*    Principal: 255000 | Annual Interest: 5% | Term: 30 Years | #Payments Per Year: 12             *
-*    Base Payment: 1368.9                                                                          *
-*    Loan Insurance Per Payment required: 0                                                        *
-*    HOA Fee Per Payment: 166.67                                                                   *
-*    ESCROW Fee Per Payment: 853.12                                                                *
-*    Property Tax Per Payment: 473.96                                                              *
-*    HomeOwner Insurance Per Payment: 379.17                                                       *
-*    Total Monthly Payment: 2388.69                                                                *
+*    Principal: $255,000.00 | Annual Interest: 5.00% | Term: 30 Years | #Payments Per Year: 12     *
+*    Base Payment: $1,368.90                                                                       *
+*    Loan Insurance Per Payment required: $0.00                                                    *
+*    HOA Fee Per Payment: $166.67                                                                  *
+*    ESCROW Fee Per Payment: $853.12                                                               *
+*        Property Tax Per Payment: $473.96                                                         *
+*        HomeOwner Insurance Per Payment: $379.17                                                  *
+*    Total Monthly Payment: $2,388.69                                                              *
 ****************************************************************************************************
 
-Please Enter a Higher Down Payment Amount, 200000 is too low:
+Please Enter a Higher Down Payment Amount, $200,000 is too low:
 300000
-Update Applicant's Yearly Income:
+Update Applicant's Yearly Income: 
 100000
 
 Congratulation!!! Loan is Approved!
 
 ****************************************************************************************************
-*    Principal: 154000 | Annual Interest: 5% | Term: 30 Years | #Payments Per Year: 12             *
-*    Base Payment: 826.71                                                                          *
-*    Loan Insurance Per Payment required: 0                                                        *
-*    HOA Fee Per Payment: 166.67                                                                   *
-*    ESCROW Fee Per Payment: 853.12                                                                *
-*    Property Tax Per Payment: 473.96                                                              *
-*    HomeOwner Insurance Per Payment: 379.17                                                       *
-*    Total Monthly Payment: 1846.5                                                                 *
+*    Principal: $154,000.00 | Annual Interest: 5.00% | Term: 30 Years | #Payments Per Year: 12     *
+*    Base Payment: $826.71                                                                         *
+*    Loan Insurance Per Payment required: $0.00                                                    *
+*    HOA Fee Per Payment: $166.67                                                                  *
+*    ESCROW Fee Per Payment: $853.12                                                               *
+*        Property Tax Per Payment: $473.96                                                         *
+*        HomeOwner Insurance Per Payment: $379.17                                                  *
+*    Total Monthly Payment: $1,846.50                                                              *
 ****************************************************************************************************
 ```
  
