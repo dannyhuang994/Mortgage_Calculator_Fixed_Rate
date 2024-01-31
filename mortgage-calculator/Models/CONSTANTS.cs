@@ -13,9 +13,9 @@ namespace loan_calculator.Models
 
 
         // for HomePurchae 
-        public const double ORIGIGINATION_FEE_PERCENTAGE = 1; // 1
+        public const double ORIGIGINATION_FEE_PERCENTAGE = 1;
 
-        public const double CLOSING_FEE_AND_TAXES = 2500;  // 2500
+        public const double CLOSING_FEE_AND_TAXES = 2500;
 
         public const double LOAN_INSURANCE_PERCENTAGE = 1.0;
 

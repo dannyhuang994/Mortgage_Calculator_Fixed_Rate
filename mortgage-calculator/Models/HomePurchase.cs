@@ -13,7 +13,6 @@ namespace loan_calculator.Models
     public class HomePurchase
     {
         public double PurchasePrice { get; set; }  // get from user input
-        //public double LoanAmount { get; set; }    
         public double MarketValue { get; set; }    // get from user input
         public double DownPayment { get; set; }    // get from user input
         public double YearlyHOA { get; set; }    // get from user input

@@ -10,7 +10,7 @@ namespace loan_calculator.Models
 {
     public class Loan
     {
-        public double Principal { get; set; }  // get from user input
+        public double Principal { get; set; }  // calculated from user input 
         public double AnnualInterestPercentage { get; set; } // get from user input
         public int NumberOfPaymentPerYear { get; set; }  // get from user input
         public int TermsInYear { get; set; }  // get from user input and this is the number of year/term for the loan 
