@@ -39,9 +39,9 @@ namespace loan_calculator.Models
                                                                             , newHomePurchase.PurchasePrice);
             newHomePurchase.YearlyHOA = ValidationMethods.GetValidDouble("Enter Yearly HOA Fee: ");
 
-            double principle = newHomePurchase.GetTotalLoanAmountRequired();
+            double principal = newHomePurchase.GetTotalLoanAmountRequired();
 
-            newHomePurchase.CurrentLoan = Loan.CreateLoan(principle);
+            newHomePurchase.CurrentLoan = Loan.CreateLoan(principal);
 
             return newHomePurchase;
         }
@@ -49,7 +49,7 @@ namespace loan_calculator.Models
         public void UpdateDownPayment(double newDownPayment)
         {
             DownPayment = newDownPayment;
-            CurrentLoan.Principle = GetTotalLoanAmountRequired(); // adjusting the principle in total amount borrowed
+            CurrentLoan.Principal = GetTotalLoanAmountRequired(); // adjusting the principal in total amount borrowed
         }
 
         public double GetTotalLoanAmountRequired()
@@ -65,12 +65,12 @@ namespace loan_calculator.Models
         public double GetEquityPercentage()
         {
             ////  calculate Equity Percentage
-           
-            double equityPercentage = 100* (    MarketValue -   GetTotalLoanAmountRequired() )/  MarketValue;
+
+            double equityPercentage = 100 * (MarketValue - GetTotalLoanAmountRequired()) / MarketValue;
 
             return equityPercentage;
         }
-    
+
         public double GetRequireLoanInsurancePerPayment()
         {
             // Loan insurance will be required on any loan
@@ -86,10 +86,10 @@ namespace loan_calculator.Models
             //split into equal payments per year.
 
             bool requireLoanInsurancePerPayment = CONSTANTS.MIN_EQUITY_AT_INCEPTION_PERCENTAGE > GetEquityPercentage();
-          
+
             if (requireLoanInsurancePerPayment)
             {
-                return CONSTANTS.LOAN_INSURANCE_PERCENTAGE * GetTotalLoanAmountRequired() / 100 / CurrentLoan.NumberOfPaymentPerYear; 
+                return CONSTANTS.LOAN_INSURANCE_PERCENTAGE * GetTotalLoanAmountRequired() / 100 / CurrentLoan.NumberOfPaymentPerYear;
             }
 
             return 0;
@@ -98,7 +98,7 @@ namespace loan_calculator.Models
         public double GetHOAFeePerPayment()
         {
             //  calculate HOA fee per payment
-            return this.YearlyHOA/this.CurrentLoan.NumberOfPaymentPerYear;
+            return this.YearlyHOA / this.CurrentLoan.NumberOfPaymentPerYear;
         }
 
         public double GetEscrow()
@@ -126,7 +126,7 @@ namespace loan_calculator.Models
 
         public bool DecisionToApprove(double yearlyIncome)
         {
-            bool decisionToApprove = CONSTANTS.DECISION_THRESHOLD_PERCENTAGE * yearlyIncome / CurrentLoan.NumberOfPaymentPerYear  > GetMonthlyPayment();
+            bool decisionToApprove = CONSTANTS.DECISION_THRESHOLD_PERCENTAGE * yearlyIncome / CurrentLoan.NumberOfPaymentPerYear > GetMonthlyPayment();
 
             if (decisionToApprove)
             {
@@ -157,12 +157,12 @@ namespace loan_calculator.Models
         public override string ToString()
         {
             return $"*    {this.CurrentLoan.ToString()}" + "*\n" +
-                   $"*    Loan Insurance Per Payment required: { Math.Round(GetRequireLoanInsurancePerPayment(), 2)} ".PadRight(99, ' ') + "*\n" +
-                   $"*    HOA Fee Per Payment: {  Math.Round(GetHOAFeePerPayment(),2) } ".PadRight(99, ' ') + "*\n" +
-                   $"*    ESCROW Fee Per Payment: {   Math.Round( GetEscrow(),2)  } ".PadRight(99, ' ') + "*\n" +
-                   $"*    Property Tax Per Payment: { Math.Round(GetPropertyTaxPerPayment(), 2)   } ".PadRight(99, ' ') + "*\n" +
-                   $"*    HomeOwner Insurance Per Payment: {  Math.Round( GetHomeOwnerInsurancePerPayment(), 2)   } ".PadRight(99, ' ') + "*\n" +
-                   $"*    Total Monthly Payment: {    Math.Round(GetMonthlyPayment(), 2) }".PadRight(99, ' ') + "*" ; 
+                   $"*    Loan Insurance Per Payment required: {Math.Round(GetRequireLoanInsurancePerPayment(), 2)} ".PadRight(99, ' ') + "*\n" +
+                   $"*    HOA Fee Per Payment: {Math.Round(GetHOAFeePerPayment(), 2)} ".PadRight(99, ' ') + "*\n" +
+                   $"*    ESCROW Fee Per Payment: {Math.Round(GetEscrow(), 2)} ".PadRight(99, ' ') + "*\n" +
+                   $"*    Property Tax Per Payment: {Math.Round(GetPropertyTaxPerPayment(), 2)} ".PadRight(99, ' ') + "*\n" +
+                   $"*    HomeOwner Insurance Per Payment: {Math.Round(GetHomeOwnerInsurancePerPayment(), 2)} ".PadRight(99, ' ') + "*\n" +
+                   $"*    Total Monthly Payment: {Math.Round(GetMonthlyPayment(), 2)}".PadRight(99, ' ') + "*";
         }
     }
 }
